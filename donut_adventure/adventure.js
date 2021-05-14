@@ -21,8 +21,10 @@ class Hero {
     announceHealth(){
       console.log(this.health)
     }
-    fight(){
-      console.log('i\'m ready to rumble')
+    fight(enemy){
+      console.log (this.weapons.sprinkleSpray);
+      let newHealth = enemy.health -= this.weapons.sprinkleSpray;
+      return `${enemy.name} has a new health of ${newHealth}`
     }
 }
 const Dougie = new Hero('Dougie')
@@ -45,8 +47,23 @@ class Enemy {
     announceHealth(){
       console.log(this.health)
     }
-    fight(){
-      console.log('i\'m gonna flatten you like a slice of pepperoni!')
+    fight(enemy){
+      console.log (this.weapons.cheeseGrease);
+      let newHealth = enemy.health -= this.weapons.cheeseGrease;
+      return `${enemy.name} has a new health of ${newHealth}`
     }
 }
+
 const PizzaRat = new Enemy('Pizza Rat')
+
+//1.
+Dougie.talkSass()
+
+//2.
+PizzaRat.talkSmack()
+
+//3.
+Dougie.announceHealth()
+
+//4.
+PizzaRat.announceHealth()
